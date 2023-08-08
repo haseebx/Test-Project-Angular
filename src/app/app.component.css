@@ -6,8 +6,11 @@
     font-weight: bolder;
 }
 .counter{
-    border: 2px solid;
+    /* border: 2px solid; */
     margin-block: 2rem;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
 }
 .count-data{
     margin-block: 2rem;

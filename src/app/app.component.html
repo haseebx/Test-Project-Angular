@@ -36,14 +36,27 @@
   </button>
   <ng-template *ngIf="state; then ifBlock; else elseBlock"></ng-template>
   <ng-template #ifBlock>
+    <form #basicForm="ngForm" (ngSubmit)="getData(basicForm.value)">
+      <input type="text" ngModel name="username" placeholder="Enter username" />
+      <br /><br />
+      <input
+        type="password"
+        ngModel
+        name="password"
+        placeholder="Enter password"
+      />
+      <br /><br />
+      <input type="email" ngModel name="email" placeholder="Enter Email" />
+      <br /><br />
+      <button class="btn">Submit</button>
+    </form>
+  </ng-template>
+
+  <ng-template #elseBlock>
     <div class="counter">
       <button (click)="setCount('add')" class="btn">++</button>
       <h1 class="count-data">{{ count }}</h1>
       <button (click)="setCount('Min')" class="btn">--</button>
     </div>
-  </ng-template>
-
-  <ng-template #elseBlock>
-    <h1>i'm the else part</h1>
   </ng-template>
 </div>

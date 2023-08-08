@@ -1,14 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-
-
-
 import {UserAuthModule} from "./user-auth/user-auth.module";
 import { HeaderComponent } from './header/header.component'
-
+import {FormsModule} from "@angular/forms"
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +14,7 @@ import { HeaderComponent } from './header/header.component'
   imports: [
     BrowserModule,
     UserAuthModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
