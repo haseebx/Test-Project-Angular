@@ -31,8 +31,17 @@ export class AppComponent {
     }
     this.state = true;
   }
-  getData(val:NgForm){
+  data: any = {};
+  getData(val: NgForm) {
     console.log(val);
-    
+    this.data = val;
+  }
+  check = true;
+  getChangeChild() {
+    if (this.check === true) {
+      this.check = false;
+      return;
+    }
+    this.check = true;
   }
 }

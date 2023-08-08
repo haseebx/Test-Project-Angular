@@ -31,10 +31,28 @@
   <div style="margin-top: 5rem">
     <span class="text-style">Input Box value is: </span>{{ displayVal }}
   </div>
-  <button class="btn" style="margin-block: 2rem" (click)="changVal()">
-    Show/Hide
-  </button>
-  <ng-template *ngIf="state; then ifBlock; else elseBlock"></ng-template>
+  <div class="btn-set">
+    <button
+      class="btn btn-danger"
+      style="margin-block: 2rem"
+      (click)="changVal()"
+    >
+      Show/Hide
+    </button>
+    <button
+      class="btn btn-danger"
+      style="margin-block: 2rem"
+      (click)="getChangeChild()"
+    >
+      Show Child data
+    </button>
+  </div>
+  <ng-container *ngIf="!check; else childBlock">
+    <ng-template *ngIf="state; then ifBlock; else elseBlock"></ng-template>
+  </ng-container>
+  <ng-template #childBlock>
+    <app-child></app-child>
+  </ng-template>
   <ng-template #ifBlock>
     <form #basicForm="ngForm" (ngSubmit)="getData(basicForm.value)">
       <input type="text" ngModel name="username" placeholder="Enter username" />
@@ -50,13 +68,24 @@
       <br /><br />
       <button class="btn">Submit</button>
     </form>
+    <ul>
+      <li>
+        {{ data.username }}
+      </li>
+      <li>
+        {{ data.password }}
+      </li>
+      <li>
+        {{ data.email }}
+      </li>
+    </ul>
   </ng-template>
 
   <ng-template #elseBlock>
     <div class="counter">
-      <button (click)="setCount('add')" class="btn">++</button>
+      <button (click)="setCount('add')" class="btn btn-success">++</button>
       <h1 class="count-data">{{ count }}</h1>
-      <button (click)="setCount('Min')" class="btn">--</button>
+      <button (click)="setCount('Min')" class="btn btn-secondary">--</button>
     </div>
   </ng-template>
 </div>
