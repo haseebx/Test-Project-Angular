@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +29,19 @@ export class AppComponent {
       console.log('in If');
       return;
     }
-
     this.state = true;
+  }
+  data: any = {};
+  getData(val: NgForm) {
+    console.log(val);
+    this.data = val;
+  }
+  check = true;
+  getChangeChild() {
+    if (this.check === true) {
+      this.check = false;
+      return;
+    }
+    this.check = true;
   }
 }
