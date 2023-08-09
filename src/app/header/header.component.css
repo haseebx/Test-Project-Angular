@@ -30,16 +30,17 @@
   gap: 3rem;
 }
 
-.menu-list li {
+.menu-list a {
   list-style: none;
   font-size: 18px;
   font-weight: 600;
   color: #5d5a88;
   cursor: pointer;
-  transition: color 0.3s; /* Transition for color and border */
+  transition: color 0.3s;
+  text-decoration: none;
 }
 
-.menu-list li:hover {
+.menu-list a:hover {
   border-bottom: 2px solid #1a1a1a; /* Add bottom border on hover */
  color: #5d5a88;
 }

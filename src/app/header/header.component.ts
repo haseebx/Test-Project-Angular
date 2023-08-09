@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  menu = ['Home', 'About', 'Success Story', 'Contact'];
+  menu = [
+    { title: 'Home', link: '' },
+    { title: 'About', link: '/login' },
+    { title: 'Success Story', link: '/child' },
+    { title: 'Contact', link: '/parent' },
+  ];
 }

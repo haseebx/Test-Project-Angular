@@ -5,7 +5,9 @@
       <h1 class="title">Logo Get Back in Touch</h1>
     </div>
     <div class="menu-list">
-      <li *ngFor="let menuItem of menu">{{ menuItem }}</li>
+      <a *ngFor="let menuItem of menu" [routerLink]="menuItem.link">{{
+        menuItem.title
+      }}</a>
       <div class="btn-gap">
         <button class="login-btn">Login</button>
         <button class="start-btn">Get Started</button>

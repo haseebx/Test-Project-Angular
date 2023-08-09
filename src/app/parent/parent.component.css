@@ -1,0 +1,26 @@
+.custom{
+    color: red;
+}
+.text-style{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.counter{
+    /* border: 2px solid; */
+    margin-block: 2rem;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+.count-data{
+    margin-block: 2rem;
+}
+.btn{
+    padding-inline: 2rem;
+    padding-block: 0.5rem;
+    border: 1px solid;
+}
+.btn-set{
+    display: flex;
+    gap: 2rem;
+}
